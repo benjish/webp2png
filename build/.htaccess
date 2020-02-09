@@ -1,0 +1,17 @@
+
+AddType application/wasm .wasm
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 seconds"
+  ExpiresByType text/html A1
+  ExpiresByType text/json A1
+  ExpiresByType application/json A1
+  ExpiresByType image/* A31536000
+  ExpiresByType font/* A31536000
+  ExpiresByType text/css A31536000
+  ExpiresByType text/javascript A31536000
+  ExpiresByType application/wasm A31536000
+  ExpiresByType application/javascript A31536000
+  ExpiresByType application/x-javascript A31536000
+</IfModule>

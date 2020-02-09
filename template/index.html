@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>TEST WASM WEBP TO PNG</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		img {
+			float: left;
+			width: 150px;
+			height: 225px;
+			/*width: calc(100vw / 12);
+			height: calc(100vw / 12 / (2/3)- 1);*/
+			object-fit: cover;
+		}
+
+		.btn {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+			padding: 20px;
+		}
+
+		a,a:hover {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color:white;
+			padding: 12px;
+			min-width: 160px;
+			margin: 10px;
+			background-color: #0089f4;
+			border-radius: 0.25rem;
+			text-decoration: none;
+			font-weight: 600;
+			font-family: monospace;
+		}
+
+		a:hover {
+			background-color:#0063b0;
+		}
+	</style>
+
+	<!-- <script data-consolejs-channel="20f2aff6-33e0-80fd-1a72-c690b6cc8de0" src="https://remotejs.com/agent/agent.js"></script> -->
+	</head>
+	<body>
+		<div class="btn">
+			<a class="b0" href="?no-sw">SANS SERVICE WORKER</a>
+			<a class="b1" href="?">AVEC SERVICE WORKER</a>
+			<a class="b2" href="javascript:if(SWClearCache) SWClearCache();">CLEAR WORKER CACHE</a>
+		</div>
+		<div class="term"></div>
+		<script>
+			const b0 = document.querySelector('.b0');
+			const b1 = document.querySelector('.b1');
+			const b2 = document.querySelector('.b2');
+
+			const wo = document.location.search !== '?no-sw';
+
+			if (wo) {
+				b0.style.backgroundColor = '';
+				b1.style.backgroundColor = '#00b067';
+				b2.style.backgroundColor = '';
+			} else {
+				b0.style.backgroundColor = '#00b067';
+				b1.style.backgroundColor = '';
+				b2.style.backgroundColor = '#585858';
+			}
+
+			const term = document.querySelector('.term');
+			function termOut(d) {
+				const pr = document.createElement('pre');
+				pr.innerText = d;
+				term.appendChild(pr);
+			}
+
+			termOut('MESSAGES');
+
+		</script>
+		<!-- <script src="webp2png/webp2png-api.js"></script> -->
+		<script src="script.js"></script>
+	</body>
+</html>
